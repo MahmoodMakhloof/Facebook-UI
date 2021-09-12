@@ -29,7 +29,6 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(
             iconTheme: IconThemeData(color: Colors.black),
             backgroundColor: Colors.white,
-            backwardsCompatibility: false,
             toolbarTextStyle: TextStyle(color: Colors.black),
             systemOverlayStyle: SystemUiOverlayStyle(
               statusBarColor: Colors.white,
@@ -37,14 +36,17 @@ class MyApp extends StatelessWidget {
             ),
             elevation: 0.0,
           )),
-      home: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-        print(constraints.minWidth.toInt());
-        print(constraints.minHeight.toInt());
-        if (constraints.minWidth.toInt() <= 500 ||
-            constraints.minHeight.toInt() <= 500) return HomeScreen();
-        return FacebookWeb();
-      }),
+      home:
+      // LayoutBuilder(
+      //     builder: (BuildContext context, BoxConstraints constraints) {
+      //   print(constraints.minWidth.toInt());
+      //   print(constraints.minHeight.toInt());
+      //   if (constraints.minWidth.toInt() <= 500 ||
+      //       constraints.minHeight.toInt() <= 500) return HomeScreen();
+      //   return
+        FacebookWeb()
+        // ;
+      // }),
     );
   }
 }

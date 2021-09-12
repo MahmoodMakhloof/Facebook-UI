@@ -1,7 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:facebook/data_layer/models/chatmodel.dart';
 import 'package:facebook/data_layer/models/postmodel.dart';
 import 'package:facebook/data_layer/models/roommodel.dart';
+import 'package:facebook/data_layer/models/storymodel.dart';
 import 'package:flutter/material.dart';
+
+import '../../palette.dart';
 
 Widget buildRoom(RoomModel model) => CircleAvatar(
   backgroundImage: NetworkImage(model.image),
@@ -183,6 +187,74 @@ Widget buildPostItem(context, PostModel model) => Card(
         ),
         SizedBox(
           height: 10,
+        )
+      ],
+    ),
+  ),
+);
+
+Widget buildChatItem(ChatModel model) => Row(
+  mainAxisAlignment: MainAxisAlignment.start,
+  children: [
+    Stack(
+      alignment: AlignmentDirectional.bottomEnd,
+      children: [
+        CircleAvatar(
+          backgroundImage: NetworkImage(model.image),
+          radius: 20,
+        ),
+        CircleAvatar(
+          radius: 7,
+          backgroundColor: Colors.grey[300],
+        ),
+        Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: CircleAvatar(
+            radius: 5,
+            backgroundColor: Palette.online,
+          ),
+        ),
+      ],
+    ),
+    SizedBox(width: 10,),
+    Text(
+      model.name,
+      style: TextStyle(fontSize: 17,color: Colors.black87),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      textAlign: TextAlign.start,
+    )
+  ],
+);
+Widget buildStory(StoryModel model) => Padding(
+  padding: const EdgeInsets.only(left: 5),
+  child: Container(
+    width: 100,
+    child: Stack(
+      alignment: AlignmentDirectional.bottomCenter,
+      children: [
+        Container(
+          height: 200,
+          width: 100,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: NetworkImage(model.image),
+              )),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            model.text,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 13),
+            textAlign: TextAlign.start,
+          ),
         )
       ],
     ),

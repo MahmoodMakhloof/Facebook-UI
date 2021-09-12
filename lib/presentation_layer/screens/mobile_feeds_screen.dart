@@ -1,7 +1,6 @@
 import 'package:facebook/business_logic_layer/app_bloc/app_bloc.dart';
 import 'package:facebook/business_logic_layer/app_bloc/app_events.dart';
 import 'package:facebook/business_logic_layer/app_bloc/app_states.dart';
-import 'package:facebook/constants/facebook_colors.dart';
 import 'package:facebook/presentation_layer/widgets/mobile_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -257,7 +256,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                               MainAxisAlignment.center,
                                           children: [
                                             Icon(
-                                              Icons.image_outlined,
+                                              Icons.filter,
                                               color: Colors.green,
                                             ),
                                             SizedBox(

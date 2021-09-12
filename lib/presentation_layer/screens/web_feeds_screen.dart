@@ -1,225 +1,293 @@
 import 'package:facebook/business_logic_layer/app_bloc/app_bloc.dart';
+import 'package:facebook/business_logic_layer/app_bloc/app_events.dart';
 import 'package:facebook/business_logic_layer/app_bloc/app_states.dart';
-import 'package:facebook/data_layer/models/chatmodel.dart';
-import 'package:facebook/data_layer/models/storymodel.dart';
 import 'package:facebook/presentation_layer/widgets/web_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_conditional_rendering/conditional.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
+
+import '../../palette.dart';
 
 class FacebookWeb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => AppBloc()..getPosts()..getRooms()..getChats()..getStories(),
+      create: (BuildContext context) => AppBloc()
+        ..add(GetPostsEvent())
+        ..add(GetStoriesEvent())
+        ..add(GetRoomsEvent())
+        ..add(GetChatsEvent()),
       child: BlocConsumer<AppBloc, AppStates>(
-        listener: (context, state) {
-          if (state is! InitialAppState) {
-            Future.delayed(Duration(seconds: 2), () {});
-          }
-        },
+        listener: (context, state) {},
         builder: (context, state) {
           var bloc = AppBloc.get(context);
-          return Scaffold(
-            backgroundColor: Colors.grey[200],
-            body: Column(
-              children: [
-                SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Card(
-                        color: Colors.white,
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: CircleAvatar(
-                                        backgroundColor: Colors.grey[300],
-                                        child: Icon(
-                                          Icons.arrow_drop_down,
-                                          color: Colors.black,
-                                        )),
-                                  ),
-                                  Expanded(
-                                    child: CircleAvatar(
-                                        backgroundColor: Colors.grey[300],
-                                        child: Icon(
-                                          Icons.notifications,
-                                          color: Colors.black,
-                                        )),
-                                  ),
-                                  Expanded(
-                                    child: CircleAvatar(
-                                        backgroundColor: Colors.grey[300],
-                                        child: Icon(
-                                          Icons.messenger_outline,
-                                          color: Colors.black,
-                                        )),
-                                  ),
-                                  Expanded(
-                                    child: CircleAvatar(
+          return SafeArea(
+            child: Scaffold(
+              backgroundColor: Colors.grey[200],
+              body: Column(
+                children: [
+                  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Container(
+                          color: Colors.white,
+                          child: Row(
+                            children: [
+                              Container(
+                                child: Row(
+                                  children: [
+
+                                    Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Icon(
+                                        Icons.facebook,
+                                        color: Palette.facebookBlue,
+                                        size: 60,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Container(
+                                      height: 45,
+                                      width: 250,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        borderRadius:
+                                        BorderRadius.circular(25),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(12.0),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.search,
+                                              color: Colors.black54,
+                                            ),
+                                            SizedBox(width: 8,),
+                                            Text(
+                                              'Search facebook',
+                                              style: TextStyle(fontSize: 18,color: Colors.black54),
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+
+                                  ],
+                                ),
+                                width: 360,
+                              ),
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Spacer(),
+                                    Expanded(
+                                      child: Icon(
+                                        Icons.home,
+                                        color: Palette.facebookBlue,
+                                        size: 35,
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Icon(
+                                        Icons.supervised_user_circle,
+                                        color: Colors.grey,
+                                        size: 35,
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Icon(
+                                        Icons.flag_outlined,
+                                        color: Colors.grey,
+                                        size: 35,
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Icon(
+                                        Icons.ondemand_video,
+                                        color: Colors.grey,
+                                        size: 35,
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Icon(
+                                        Icons.view_compact,
+                                        color: Colors.grey,
+                                        size: 35,
+                                      ),
+                                    ),
+                                    Spacer(),
+
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: Row(
+                                        children: [
+                                          CircleAvatar(
+
+                                            backgroundImage: NetworkImage(
+                                                'https://scontent.fcai21-3.fna.fbcdn.net/v/t1.6435-9/223803416_265490708675366_1766659049128476267_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Id1_NhWULQEAX_5FKYx&_nc_oc=AQm40-APJidIBy82d-1vcoLIkP3LzXrwgHoQOAMWLG0h_GJYl4Y5NyC0NckxraXuaW8&_nc_ht=scontent.fcai21-3.fna&oh=d51daabe193d05d37691e94b2d624b9b&oe=616470EE',),
+                                          radius: 16,
+                                          ),
+                                          SizedBox(width: 8),
+                                          Expanded(
+                                              child: Text(
+                                                'Mahmoud',
+                                                style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
+                                              )),
+
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(width: 8,),
+                                    CircleAvatar(
+
                                         backgroundColor: Colors.grey[300],
                                         child: Icon(
                                           Icons.apps_sharp,
                                           color: Colors.black,
                                         )),
-                                  ),
-                                  Expanded(
-                                    flex: 2,
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                            child: Text(
-                                          'Abdullah',
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
+                                    SizedBox(width: 8,),
+                                    CircleAvatar(
+                                        backgroundColor: Colors.grey[300],
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Image(image: AssetImage('assets/images/massenger_icon.png'),),
                                         )),
-                                        Expanded(
-                                          child: CircleAvatar(
-                                            backgroundImage: NetworkImage(
-                                                'https://static.remove.bg/remove-bg-web/97e23b9bea3ef10227bf2e0bed160d3a30f93253/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
+                                    SizedBox(width: 8,),
+                                    CircleAvatar(
+                                        backgroundColor: Colors.grey[300],
+                                        child: Icon(
+                                          Icons.notifications,
+                                          color: Colors.black,
+                                        )),
+                                    SizedBox(width: 8,),
+                                    CircleAvatar(
+                                        backgroundColor: Colors.grey[300],
+                                        child: Icon(
+                                          Icons.arrow_drop_down,
+                                          color: Colors.black,size: 35,
+                                        )),
+                                    SizedBox(width: 8,),
+
+
+
+
+                                  ],
+                                ),
+                                width:360
                               ),
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: Icon(
-                                      Icons.shopping_bag_outlined,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Icon(
-                                      Icons.dashboard,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Icon(
-                                      Icons.supervised_user_circle,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Icon(
-                                      Icons.video_settings_rounded,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Icon(
-                                      Icons.home,
-                                      color: Colors.blue,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.grey[300],
-                                        borderRadius: BorderRadius.circular(25),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(5.0),
-                                        child: Row(
-                                          children: [
-                                            Expanded(
-                                                child: Text(
-                                              'Search Facebook',
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                            )),
-                                            Icon(
-                                              Icons.search,
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Icon(
-                                    Icons.facebook,
-                                    color: Colors.blue,
-                                    size: 50,
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
+                        SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
+                  Expanded(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Expanded(
+                        Container(
+                          width: 360,
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Expanded(
-                                      child: Text(
-                                    'Contacts',
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                  )),
-                                  Expanded(
-                                    flex: 2,
-                                    child: Row(
-                                      children: [
-                                        Expanded(child: Icon(Icons.more)),
-                                        Expanded(child: Icon(Icons.search)),
-                                        Expanded(
-                                            child: Icon(
-                                                Icons.video_settings_rounded))
-                                      ],
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: ListTile(
+                                        title: Text('Mahmoud Abbas Makhlouf',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                        leading: CircleAvatar(
+                                          radius: 20,
+                                          backgroundImage: NetworkImage('https://scontent.fcai21-3.fna.fbcdn.net/v/t1.6435-9/223803416_265490708675366_1766659049128476267_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Id1_NhWULQEAX_5FKYx&_nc_oc=AQm40-APJidIBy82d-1vcoLIkP3LzXrwgHoQOAMWLG0h_GJYl4Y5NyC0NckxraXuaW8&_nc_ht=scontent.fcai21-3.fna&oh=d51daabe193d05d37691e94b2d624b9b&oe=616470EE'),
+                                        ),
+                                      ),
                                     ),
-                                  )
-                                ],
+                                    Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: ListTile(
+                                        title: Text('Friends',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                        leading: Icon(Icons.group_rounded,color: Colors.blueAccent,size: 30,),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: ListTile(
+                                        title: Text('Marketplace',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                        leading: Icon(Icons.add_business_sharp,color: Colors.blue,size: 30,),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: ListTile(
+                                        title: Text('Saved',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                        leading: Icon(Icons.save_outlined,color: Colors.deepPurpleAccent,size: 30,),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: ListTile(
+                                        title: Text('Groups',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                        leading: Icon(Icons.family_restroom_outlined,color: Colors.cyan,size: 30,),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: ListTile(
+                                        title: Text('Ad Center',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                        leading: Icon(Icons.addchart_sharp,color: Colors.indigoAccent,size: 30,),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: ListTile(
+                                        title: Text('Ads Manager',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                        leading: Icon(Icons.manage_accounts_rounded,color: Colors.cyan,size: 30,),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: ListTile(
+                                        title: Text('Community Help',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                        leading: Icon(Icons.flag_outlined,color: Colors.amber,size: 30,),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                               SizedBox(
                                 height: 10,
                               ),
-                              Expanded(
-                                child: ListView.separated(
-                                    itemBuilder: (context, index) =>
-                                        buildChatItem(bloc.chats[index]),
-                                    separatorBuilder: (context, index) =>
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                    itemCount: bloc.chats.length),
-                              )
+                              Container(
+                                height: 1,
+                                color: Colors.grey[300],
+                                width: double.infinity,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+
                             ],
                           ),
                         ),
+                        SizedBox(width: 20,),
+
                         Expanded(
                           flex: 2,
                           child: Align(
@@ -249,7 +317,8 @@ class FacebookWeb extends StatelessWidget {
                                             height: 20,
                                           ),
                                           Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding:
+                                                const EdgeInsets.all(8.0),
                                             child: Row(
                                               children: [
                                                 CircleAvatar(
@@ -262,7 +331,8 @@ class FacebookWeb extends StatelessWidget {
                                                 Expanded(
                                                   child: Container(
                                                     decoration: BoxDecoration(
-                                                        color: Colors.grey[200],
+                                                        color:
+                                                            Colors.grey[200],
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(25),
@@ -271,7 +341,8 @@ class FacebookWeb extends StatelessWidget {
                                                                 .shade200)),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.only(
+                                                          const EdgeInsets
+                                                                  .only(
                                                               left: 20,
                                                               right: 20,
                                                               top: 10,
@@ -418,8 +489,8 @@ class FacebookWeb extends StatelessWidget {
                                                           child: Text(
                                                             'Create Room',
                                                             style: TextStyle(
-                                                                color:
-                                                                    Colors.blue,
+                                                                color: Colors
+                                                                    .blue,
                                                                 fontSize: 16,
                                                                 fontWeight:
                                                                     FontWeight
@@ -459,89 +530,153 @@ class FacebookWeb extends StatelessWidget {
                                     SizedBox(
                                       height: 5,
                                     ),
-                                    ListView.separated(
-                                        shrinkWrap: true,
-                                        physics: NeverScrollableScrollPhysics(),
-                                        itemBuilder: (context, index) =>
-                                            buildPostItem(
-                                                context, bloc.posts[index]),
-                                        separatorBuilder: (context, index) =>
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                        itemCount: bloc.posts.length)
+                                    Conditional.single(
+                                        context: context,
+                                        conditionBuilder: (context) =>
+                                            bloc.posts.length != 0,
+                                        widgetBuilder: (context) =>
+                                            ListView.separated(
+                                                shrinkWrap: true,
+                                                physics:
+                                                    NeverScrollableScrollPhysics(),
+                                                itemBuilder: (context,
+                                                        index) =>
+                                                    buildPostItem(context,
+                                                        bloc.posts[index]),
+                                                separatorBuilder:
+                                                    (context, index) =>
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                itemCount: bloc.posts.length),
+                                        fallbackBuilder: (context) => Shimmer(
+                                            interval: Duration(seconds: 5),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(
+                                                          15.0),
+                                                  child: Row(
+                                                    children: [
+                                                      CircleAvatar(
+                                                        backgroundColor:
+                                                            Colors.grey[300],
+                                                        radius: 22,
+                                                      ),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      Container(
+                                                        width: 120,
+                                                        height: 12,
+                                                        color:
+                                                            Colors.grey[300],
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(
+                                                          10.0),
+                                                  child: Container(
+                                                    width: 250,
+                                                    height: 7,
+                                                    color: Colors.grey[300],
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(
+                                                          10.0),
+                                                  child: Container(
+                                                    width: 200,
+                                                    height: 7,
+                                                    color: Colors.grey[300],
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(
+                                                          10.0),
+                                                  child: Container(
+                                                    width: 250,
+                                                    height: 7,
+                                                    color: Colors.grey[300],
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(
+                                                          10.0),
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    height: 300,
+                                                    color: Colors.grey[300],
+                                                  ),
+                                                )
+                                              ],
+                                            )))
                                   ],
                                 ),
                               ),
                             ),
                           ),
                         ),
-                        // Expanded(
-                        //   child: Column(
-                        //     children: [
-                        //       Expanded(
-                        //         child: Column(
-                        //           children: [
-                        //             Expanded(
-                        //                 child: buildRightSide(bloc.rights[0])),
-                        //             Expanded(
-                        //                 child: buildRightSide(bloc.rights[1])),
-                        //             Expanded(
-                        //                 child: buildRightSide(bloc.rights[2])),
-                        //             Expanded(
-                        //                 child: buildRightSide(bloc.rights[3])),
-                        //             Expanded(
-                        //                 child: buildRightSide(bloc.rights[4])),
-                        //             Expanded(
-                        //                 child: buildRightSide(bloc.rights[5])),
-                        //           ],
-                        //         ),
-                        //       ),
-                        //       SizedBox(
-                        //         height: 10,
-                        //       ),
-                        //       Container(
-                        //         height: 1,
-                        //         color: Colors.grey[300],
-                        //         width: double.infinity,
-                        //       ),
-                        //       SizedBox(
-                        //         height: 10,
-                        //       ),
-                        //       // Expanded(
-                        //       //     child: Column(
-                        //       //   crossAxisAlignment: CrossAxisAlignment.start,
-                        //       //   children: [
-                        //       //     Expanded(
-                        //       //         child: buildRightSide(bloc.rights[6])),
-                        //       //     Expanded(
-                        //       //         child: buildRightSide(bloc.rights[7])),
-                        //       //     Expanded(
-                        //       //         child: buildRightSide(bloc.rights[8])),
-                        //       //     Expanded(
-                        //       //         child: buildRightSide(bloc.rights[9])),
-                        //       //     Expanded(
-                        //       //         child: buildRightSide(bloc.rights[10])),
-                        //       //     Expanded(
-                        //       //         child: buildRightSide(bloc.rights[11])),
-                        //       //     Expanded(
-                        //       //         child: Padding(
-                        //       //       padding: const EdgeInsets.all(10.0),
-                        //       //       child: Text(
-                        //       //         'الخصوصيه.الشروط.الاعلانات . ملف تعريف الارتباط.المزيد.حقوق.النشر محفوظه @facebook 2021',
-                        //       //         style: TextStyle(color: Colors.grey),
-                        //       //       ),
-                        //       //     ))
-                        //       //   ],
-                        //       // )),
-                        //     ],
-                        //   ),
-                        // ),
+
+                        SizedBox(width: 20,),
+                        Container(
+                          width: 360,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                      child: Text(
+                                    'Contacts',
+                                    style: TextStyle(fontSize: 22,color: Colors.black54),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  )),
+                                  Spacer(),
+                                  Icon(
+                                      Icons.video_call_outlined,color: Colors.black54,size: 25),
+                                  SizedBox(width: 10,),
+                                  Icon(Icons.search,color: Colors.black54,size: 25),
+                                  SizedBox(width: 10,),
+                                  Icon(Icons.more_horiz,color: Colors.black54,size: 25,),
+                                  SizedBox(width: 10,),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+
+                              Expanded(
+                                child: ListView.separated(
+                                    itemBuilder: (context, index) =>
+                                        buildChatItem(bloc.chats[index]),
+                                    separatorBuilder: (context, index) =>
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                    itemCount: bloc.chats.length),
+                              ),
+                              SizedBox(height: 20,),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           );
         },
@@ -549,57 +684,5 @@ class FacebookWeb extends StatelessWidget {
     );
   }
 
-  Widget buildChatItem(ChatModel model) => Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Expanded(
-            child: CircleAvatar(
-              backgroundImage: NetworkImage(model.image),
-            ),
-          ),
-          Expanded(
-              flex: 2,
-              child: Text(
-                model.name,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.start,
-              ))
-        ],
-      );
 
-  Widget buildStory(StoryModel model) => Padding(
-        padding: const EdgeInsets.only(left: 5),
-        child: Container(
-          width: 100,
-          child: Stack(
-            alignment: AlignmentDirectional.bottomCenter,
-            children: [
-              Container(
-                height: 200,
-                width: 100,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: NetworkImage(model.image),
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  model.text,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 13),
-                  textAlign: TextAlign.start,
-                ),
-              )
-            ],
-          ),
-        ),
-      );
 }
