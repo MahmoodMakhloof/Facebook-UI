@@ -354,62 +354,66 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                 color: Colors.grey[300],
                                               ),
                                           itemCount: bloc.posts.length),
-                                  fallbackBuilder: (context) => Shimmer( //Default Value
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                     children: [
-                                       Padding(
-                                         padding: const EdgeInsets.all(15.0),
-                                         child: Row(
-                                           children: [
-                                             CircleAvatar(backgroundColor: Colors.grey[300],radius: 22,),
-                                             SizedBox(width: 10,),
-                                             Container(
-                                               width: 120,
-                                               height: 12,
-                                               color: Colors.grey[300],
-                                             )
-                                           ],
-
-                                         ),
-                                       ),
-                                       Padding(
-                                         padding: const EdgeInsets.all(10.0),
-                                         child: Container(
-                                           width: 250,
-                                           height: 7,
-                                           color: Colors.grey[300],
-                                         ),
-                                       ),
-                                       Padding(
-                                         padding: const EdgeInsets.all(10.0),
-                                         child: Container(
-                                           width: 200,
-                                           height: 7,
-                                           color: Colors.grey[300],
-                                         ),
-                                       ),
-                                       Padding(
-                                         padding: const EdgeInsets.all(10.0),
-                                         child: Container(
-                                           width: 250,
-                                           height: 7,
-                                           color: Colors.grey[300],
-                                         ),
-                                       ),
-
-                                       Padding(
-                                         padding: const EdgeInsets.all(10.0),
-                                         child: Container(
-                                           width: double.infinity,
-                                           height: 300,
-                                           color: Colors.grey[300],
-                                         ),
-                                       )
-                                     ],
-                                    )
-                                  )
-                              ),
+                                  fallbackBuilder: (context) => Shimmer(
+                                      interval: Duration(seconds: 5),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.all(15.0),
+                                            child: Row(
+                                              children: [
+                                                CircleAvatar(
+                                                  backgroundColor:
+                                                      Colors.grey[300],
+                                                  radius: 22,
+                                                ),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                Container(
+                                                  width: 120,
+                                                  height: 12,
+                                                  color: Colors.grey[300],
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(10.0),
+                                            child: Container(
+                                              width: 250,
+                                              height: 7,
+                                              color: Colors.grey[300],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(10.0),
+                                            child: Container(
+                                              width: 200,
+                                              height: 7,
+                                              color: Colors.grey[300],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(10.0),
+                                            child: Container(
+                                              width: 250,
+                                              height: 7,
+                                              color: Colors.grey[300],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(10.0),
+                                            child: Container(
+                                              width: double.infinity,
+                                              height: 300,
+                                              color: Colors.grey[300],
+                                            ),
+                                          )
+                                        ],
+                                      ))),
                             ],
                           ),
                         ),

@@ -3,33 +3,33 @@ import 'package:facebook/data_layer/models/postmodel.dart';
 class Posts {
   static List<PostModel> posts = [
     PostModel(
-        name: 'Abdullah Ghayad',
+        name: 'Mahmoud Makhlouf',
         time: 5,
         text:
-            'The APIC Text is the most comprehensive and up-to-date reference for infection prevention and control (IPC). Written, edited, and reviewed by more than 200 subject matter experts, it reflects the latest guidelines, regulations, and standards of practice.The APIC Text\’s 11 sections and 125 peer-reviewed chapters are broad ranging, covering everything from fundamental principles, microbiology, epidemiology, and surveillance to more specialized topics, including specialty care populations, special pathogens, occupational health, and supportive care.',
+            'PC programs have evolved significantly over the past 50 years, and they are affected by professional and nonprofit organizations',
         comments: 5,
         like: 50,
         profileImage:
-            'http://c.files.bbci.co.uk/C870/production/_112921315_gettyimages-876284806.jpg',
+            'https://scontent.fcai21-3.fna.fbcdn.net/v/t1.6435-9/223803416_265490708675366_1766659049128476267_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Id1_NhWULQEAX_ZmUX8&_nc_oc=AQkbUYzNzhpRV3f203jaivneTbIBvEcYVufOo9FgVVAlsUElvE-zqYI0iuLsxzOVMVs&_nc_ht=scontent.fcai21-3.fna&oh=f9e9dc9c0b0f896c3515975fda625443&oe=616470EE',
         images: [
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCZlf5lc5tX-0gY-y94pGS0mQdL-D0lCH2OQ&usqp=CAU'
+          'https://i.pinimg.com/564x/ea/ff/f5/eafff5fd05f468af12e8e3a2e84e5e1f.jpg'
         ]),
     PostModel(
         name: 'Mostafa Ghayad',
         time: 15,
         text:
-            'IPC programs have evolved significantly over the past 50 years, and they are affected by professional and nonprofit organizations; government, regulatory, and accrediting agencies; and scientific research and publications. It’s imperative that infection preventionists have access to the best information available to reduce risk. The APIC Text is your reliable source, designed to be a one-stop shop for effective IPC at your facility.',
+            'IPC programs have evolved significantly over the past 50 years, and they are affected by professional and nonprofit organizations; government, regulatory.',
         comments: 25,
         like: 100,
         profileImage:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuEHrfimWzHnSVc2NXN5uFvpMqHGuheiskIA&usqp=CAU',
+            'https://i.pinimg.com/236x/d1/b0/20/d1b020920db659d93955a0c057a18afe.jpg',
         images: [
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkjmUyRahAl-j_OOJFpM8jl2wbyQ0z7SI_0w&usqp=CAU'
+          'https://i.pinimg.com/236x/1f/72/1a/1f721a093e865cd2c637fffa891b16fc.jpg'
         ]),
     PostModel(
         name: 'Menna Mahmoud',
         profileImage:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh6oPIzWAVL6bJTbPZ4N2paZ1xpqti-QRj7g&usqp=CAU',
+            'https://i.pinimg.com/236x/a5/a6/ad/a5a6adbb95e0bcdf7e2ee9b387dfe128.jpg',
         like: 120,
         comments: 30,
         time: 1,
@@ -37,9 +37,9 @@ class Posts {
             'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.',
         images: []),
     PostModel(
-        name: 'Ahmed Salah',
+        name: 'Hiam Salah',
         profileImage:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOd256TcC6vcaQ99TYzoP0pBbch9_Q-bbrmw&usqp=CAU',
+            'https://i.pinimg.com/236x/1d/e0/50/1de050c153c425484dd4c7dc6f797f23.jpg',
         like: 1100,
         comments: 500,
         time: 10,
@@ -48,17 +48,17 @@ class Posts {
         images: []),
     PostModel(
         text:
-            'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',
+            'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.',
         time: 6,
         comments: 120,
         like: 300,
         profileImage:
-            'https://static.remove.bg/remove-bg-web/97e23b9bea3ef10227bf2e0bed160d3a30f93253/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg',
+            'https://i.pinimg.com/236x/53/ae/30/53ae30911bf76d43cc38de850f4417c2.jpg',
         name: 'Ahmed Khaled',
         images: [
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMdiDqhIfbW4d9p10OCWoMMjx2s8TbRat3ZQ&usqp=CAU',
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_YRYPnxMLu1YGRBpucR826XZC_1JQ5NhfLr3dzQU_CZI8tq2MlEF7mAZ6VlJHCzaFI3k&usqp=CAU',
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjYFV-bwRLTx5vbXeIRyRZDH86KNG-4ktGcg&usqp=CAU'
+          'https://i.pinimg.com/236x/d1/b0/20/d1b020920db659d93955a0c057a18afe.jpg',
+          'https://i.pinimg.com/236x/2e/05/e4/2e05e48c91dbec7b08d38c5224ff9d6a.jpg',
+          'https://i.pinimg.com/236x/36/89/37/36893711c0c6bf96bf734e8aad85003d.jpg'
         ])
   ];
 }

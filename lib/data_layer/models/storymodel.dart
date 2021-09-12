@@ -1,4 +1,5 @@
 class StoryModel {
   String image, text;
-  StoryModel({required this.image, required this.text});
+  String profileImage;
+  StoryModel({required this.image, required this.text,required this.profileImage});
 }

@@ -57,7 +57,7 @@ Widget buildStory(StoryModel model) => Padding(
                   radius: 20,
                   child: CircleAvatar(
                     radius: 17,
-                    backgroundImage: NetworkImage('https://i.pinimg.com/564x/65/11/61/651161f43f844c261ee7849041fcc9f6.jpg'),
+                    backgroundImage: NetworkImage('${model.profileImage}'),
                   ),
                 ),
               ),
@@ -68,6 +68,7 @@ Widget buildStory(StoryModel model) => Padding(
     );
 
 Widget buildPostItem(context, PostModel model) => Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 15,top: 5,right: 15),
@@ -119,7 +120,7 @@ Widget buildPostItem(context, PostModel model) => Column(
         if (model.text != '')
           Padding(
             padding: const EdgeInsets.only(right: 10.0, left: 10,top: 10,bottom: 10),
-            child: Text(model.text,style: TextStyle( color: Colors.black.withOpacity(0.8)),),
+            child: Text(model.text,style: TextStyle( color: Colors.black.withOpacity(0.8),),textAlign: TextAlign.start,),
           ),
         // SizedBox(
         //   height: 10,
