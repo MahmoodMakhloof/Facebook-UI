@@ -189,59 +189,60 @@ Widget buildPostItem(context, PostModel model) => Column(
             color: Colors.grey[300],
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-                child: Row(
-              children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.favorite_border_outlined,
-                      color: Colors.black.withOpacity(0.6),
-                      size: 20,
-                    )),
-                Expanded(
-                    child: Text(
-                  'Like',style: TextStyle(color: Colors.black.withOpacity(0.6),),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ))
-              ],
-            )),
-            Expanded(
-                child: Row(
-              children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.mode_comment_outlined,
-                      color: Colors.black.withOpacity(0.6),
-                      size: 20,
-                    )),
-                Expanded(
-                    child: Text('Comment', style: TextStyle(color: Colors.black.withOpacity(0.6),),
-                        overflow: TextOverflow.ellipsis, maxLines: 1))
-              ],
-            )),
-            Expanded(
-                child: Row(
-              children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.share_outlined,
-                      color: Colors.black.withOpacity(0.6),
-                      size: 20,
-                    )),
-                Expanded(
-                    child: Text('Share',style: TextStyle(color: Colors.black.withOpacity(0.6),),
-                        overflow: TextOverflow.ellipsis, maxLines: 1))
-              ],
-            )),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(right: 12,left: 12),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite_border_outlined,
+                    color: Colors.black.withOpacity(0.6),
+                    size: 20,
+                  )),
+              Text(
+                'Like',style: TextStyle(color: Colors.black.withOpacity(0.6),),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.mode_comment_outlined,
+                    color: Colors.black.withOpacity(0.6),
+                    size: 20,
+                  )),
+               Text('Comment', style: TextStyle(color: Colors.black.withOpacity(0.6),),
+                    overflow: TextOverflow.ellipsis, maxLines: 1),
+
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.share_outlined,
+                    color: Colors.black.withOpacity(0.6),
+                    size: 20,
+                  )),
+              Text('Share',style: TextStyle(color: Colors.black.withOpacity(0.6),),
+                  overflow: TextOverflow.ellipsis, maxLines: 1)
+                ],
+              ),
+            ],
+          ),
         ),
       ],
     );

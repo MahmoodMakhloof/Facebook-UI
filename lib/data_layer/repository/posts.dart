@@ -24,7 +24,7 @@ class Posts {
         profileImage:
             'https://i.pinimg.com/236x/d1/b0/20/d1b020920db659d93955a0c057a18afe.jpg',
         images: [
-          'https://i.pinimg.com/236x/1f/72/1a/1f721a093e865cd2c637fffa891b16fc.jpg'
+          'https://i.pinimg.com/564x/56/42/a8/5642a85696b4f7caf693a1b99c97bdae.jpg'
         ]),
     PostModel(
         name: 'Menna Mahmoud',
@@ -56,9 +56,9 @@ class Posts {
             'https://i.pinimg.com/236x/53/ae/30/53ae30911bf76d43cc38de850f4417c2.jpg',
         name: 'Ahmed Khaled',
         images: [
-          'https://i.pinimg.com/236x/d1/b0/20/d1b020920db659d93955a0c057a18afe.jpg',
-          'https://i.pinimg.com/236x/2e/05/e4/2e05e48c91dbec7b08d38c5224ff9d6a.jpg',
-          'https://i.pinimg.com/236x/36/89/37/36893711c0c6bf96bf734e8aad85003d.jpg'
+          'https://i.pinimg.com/564x/04/cf/49/04cf4974d0e093ab542a51317dc7abe8.jpg',
+          'https://i.pinimg.com/564x/f8/a1/df/f8a1dfc3cf0c934a70574c4c3432297f.jpg',
+          'https://i.pinimg.com/564x/28/8b/26/288b261f2e19dccddf07995c8439791c.jpg'
         ])
   ];
 }

@@ -29,7 +29,18 @@ class Stories {
         image:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh6oPIzWAVL6bJTbPZ4N2paZ1xpqti-QRj7g&usqp=CAU',
         text: 'Nourhan Gad',profileImage: 'https://i.pinimg.com/236x/d2/4c/03/d24c03cd2801b37496f4fe6a378d32cf.jpg'),
-
+    StoryModel(
+        image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwtgJH1LYxi0WQ-JL8GIIt_4UvJDMAUFN44Q&usqp=CAU',
+        text: 'Mahmoud Deif',profileImage: 'https://i.pinimg.com/236x/53/ae/30/53ae30911bf76d43cc38de850f4417c2.jpg'),
+    StoryModel(
+        image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGm2XqoSAwG_V3s5az1URNjUsYilzb0mHYjQ&usqp=CAU',
+        text: 'Salim Gaber',profileImage: 'https://i.pinimg.com/236x/1d/e0/50/1de050c153c425484dd4c7dc6f797f23.jpg'),
+    StoryModel(
+        image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh6oPIzWAVL6bJTbPZ4N2paZ1xpqti-QRj7g&usqp=CAU',
+        text: 'Nourhan Gad',profileImage: 'https://i.pinimg.com/236x/d2/4c/03/d24c03cd2801b37496f4fe6a378d32cf.jpg'),
 
   ];
 }

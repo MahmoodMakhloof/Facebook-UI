@@ -11,12 +11,12 @@ import 'package:shimmer_animation/shimmer_animation.dart';
 
 import '../../palette.dart';
 
-class HomeScreen extends StatefulWidget {
+class FacebookMobileScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _FacebookMobileScreenState createState() => _FacebookMobileScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+class _FacebookMobileScreenState extends State<FacebookMobileScreen> with TickerProviderStateMixin {
   late TabController _tabController;
   RefreshController refreshController =
       RefreshController(initialRefresh: false);
