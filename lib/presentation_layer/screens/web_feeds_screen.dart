@@ -201,475 +201,459 @@ class FacebookWeb extends StatelessWidget {
                   Expanded(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
                           width: 360,
-                          child: Column(
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: ListTile(
-                                        title: Text('Mahmoud Abbas Makhlouf',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                        leading: CircleAvatar(
-                                          radius: 20,
-                                          backgroundImage: NetworkImage('https://scontent.fcai21-3.fna.fbcdn.net/v/t1.6435-9/223803416_265490708675366_1766659049128476267_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Id1_NhWULQEAX_5FKYx&_nc_oc=AQm40-APJidIBy82d-1vcoLIkP3LzXrwgHoQOAMWLG0h_GJYl4Y5NyC0NckxraXuaW8&_nc_ht=scontent.fcai21-3.fna&oh=d51daabe193d05d37691e94b2d624b9b&oe=616470EE'),
-                                        ),
-                                      ),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: ListTile(
+                                    title: Text('Mahmoud Abbas Makhlouf',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                    leading: CircleAvatar(
+                                      radius: 20,
+                                      backgroundImage: NetworkImage('https://scontent.fcai21-3.fna.fbcdn.net/v/t1.6435-9/223803416_265490708675366_1766659049128476267_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Id1_NhWULQEAX_5FKYx&_nc_oc=AQm40-APJidIBy82d-1vcoLIkP3LzXrwgHoQOAMWLG0h_GJYl4Y5NyC0NckxraXuaW8&_nc_ht=scontent.fcai21-3.fna&oh=d51daabe193d05d37691e94b2d624b9b&oe=616470EE'),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: ListTile(
-                                        title: Text('Friends',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                        leading: Icon(Icons.group_rounded,color: Colors.blueAccent,size: 30,),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: ListTile(
-                                        title: Text('Marketplace',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                        leading: Icon(Icons.add_business_sharp,color: Colors.blue,size: 30,),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: ListTile(
-                                        title: Text('Saved',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                        leading: Icon(Icons.save_outlined,color: Colors.deepPurpleAccent,size: 30,),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: ListTile(
-                                        title: Text('Groups',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                        leading: Icon(Icons.family_restroom_outlined,color: Colors.cyan,size: 30,),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: ListTile(
-                                        title: Text('Ad Center',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                        leading: Icon(Icons.addchart_sharp,color: Colors.indigoAccent,size: 30,),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: ListTile(
-                                        title: Text('Ads Manager',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                        leading: Icon(Icons.manage_accounts_rounded,color: Colors.cyan,size: 30,),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: ListTile(
-                                        title: Text('Community Help',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                        leading: Icon(Icons.flag_outlined,color: Colors.amber,size: 30,),
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                height: 1,
-                                color: Colors.grey[300],
-                                width: double.infinity,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: ListTile(
+                                    title: Text('Friends',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                    leading: Icon(Icons.group_rounded,color: Colors.blueAccent,size: 30,),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: ListTile(
+                                    title: Text('Marketplace',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                    leading: Icon(Icons.add_business_sharp,color: Colors.blue,size: 30,),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: ListTile(
+                                    title: Text('Saved',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                    leading: Icon(Icons.save_outlined,color: Colors.deepPurpleAccent,size: 30,),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: ListTile(
+                                    title: Text('Groups',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                    leading: Icon(Icons.family_restroom_outlined,color: Colors.cyan,size: 30,),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: ListTile(
+                                    title: Text('Ad Center',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                    leading: Icon(Icons.addchart_sharp,color: Colors.indigoAccent,size: 30,),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: ListTile(
+                                    title: Text('Ads Manager',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                    leading: Icon(Icons.manage_accounts_rounded,color: Colors.cyan,size: 30,),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: ListTile(
+                                    title: Text('Community Help',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                    leading: Icon(Icons.flag_outlined,color: Colors.amber,size: 30,),
+                                  ),
+                                ),
 
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                        SizedBox(width: 20,),
+                        Expanded(child: Container()),
 
-                        Expanded(
-                          flex: 2,
-                          child: Align(
-                            alignment: AlignmentDirectional.topStart,
-                            child: SingleChildScrollView(
-                              child: Align(
-                                alignment: AlignmentDirectional.topStart,
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      height: 200,
-                                      child: ListView.builder(
-                                        itemBuilder: (context, index) =>
-                                            buildStory(bloc.stories[index]),
-                                        itemCount: bloc.stories.length,
-                                        physics: BouncingScrollPhysics(),
-                                        scrollDirection: Axis.horizontal,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Card(
-                                      child: Column(
-                                        children: [
-                                          SizedBox(
-                                            height: 20,
+                        Container(
+                          width: 600,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 180,
+                                  child: ListView.builder(
+                                    itemBuilder: (context, index) =>
+                                        buildStory(bloc.stories[index]),
+                                    itemCount: bloc.stories.length,
+                                    physics: BouncingScrollPhysics(),
+                                    scrollDirection: Axis.horizontal,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 25,left: 25,top: 10),
+                                  child: Card(
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.all(8.0),
+                                          child: Row(
+                                            children: [
+                                              CircleAvatar(
+                                                backgroundImage: NetworkImage(
+                                                    'https://scontent.fcai21-3.fna.fbcdn.net/v/t1.6435-9/223803416_265490708675366_1766659049128476267_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Id1_NhWULQEAX_5FKYx&_nc_oc=AQm40-APJidIBy82d-1vcoLIkP3LzXrwgHoQOAMWLG0h_GJYl4Y5NyC0NckxraXuaW8&_nc_ht=scontent.fcai21-3.fna&oh=d51daabe193d05d37691e94b2d624b9b&oe=616470EE'),
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Expanded(
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      color:
+                                                          Colors.grey[200],
+                                                      borderRadius:
+                                                          BorderRadius
+                                                              .circular(25),
+                                                      border: Border.all(
+                                                          color: Colors.grey
+                                                              .shade200)),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets
+                                                                .only(
+                                                            left: 20,
+                                                            right: 20,
+                                                            top: 10,
+                                                            bottom: 10),
+                                                    child: Text(
+                                                      'What\'s on your mind?',
+                                                      style: TextStyle(
+                                                          fontSize: 17),
+                                                    ),
+                                                  ),
+                                                ),
+                                              )
+                                            ],
                                           ),
-                                          Padding(
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Container(
+                                          height: 1,
+                                          width: double.infinity,
+                                          color: Colors.grey[200],
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Expanded(
+                                              child: Align(
+                                                alignment:
+                                                    AlignmentDirectional
+                                                        .center,
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .center,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.video_call,
+                                                      color: Colors.red,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Text('Live')
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              height: 15,
+                                              width: 1,
+                                              color: Colors.grey[300],
+                                            ),
+                                            Expanded(
+                                              child: Align(
+                                                alignment:
+                                                    AlignmentDirectional
+                                                        .center,
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .center,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.filter,
+                                                      color: Colors.green,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Text('Photo')
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              height: 15,
+                                              width: 1,
+                                              color: Colors.grey[300],
+                                            ),
+                                            Expanded(
+                                              child: Align(
+                                                alignment:
+                                                    AlignmentDirectional
+                                                        .center,
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .center,
+                                                  children: [
+                                                    Icon(
+                                                      Icons
+                                                          .face,
+                                                      color: Colors.amber,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Text('Feeling')
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 25,left: 25,top: 10),
+                                  child: Card(
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsets.only(left: 20.0),
+                                      child: Container(
+                                        height: 60,
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          physics: BouncingScrollPhysics(),
+                                          child: Padding(
                                             padding:
-                                                const EdgeInsets.all(8.0),
+                                                const EdgeInsets.all(10.0),
                                             child: Row(
                                               children: [
-                                                CircleAvatar(
-                                                  backgroundImage: NetworkImage(
-                                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg45jUi84SYeCf4uNAaprS7aoKzS8AohaLwQ&usqp=CAU'),
-                                                ),
-                                                SizedBox(
-                                                  width: 5,
-                                                ),
-                                                Expanded(
-                                                  child: Container(
+                                                Container(
+                                                    height: 35,
                                                     decoration: BoxDecoration(
-                                                        color:
-                                                            Colors.grey[200],
+                                                        color: Colors
+                                                            .lightBlue[50],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(25),
-                                                        border: Border.all(
-                                                            color: Colors.grey
-                                                                .shade200)),
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets
-                                                                  .only(
-                                                              left: 20,
-                                                              right: 20,
-                                                              top: 10,
-                                                              bottom: 10),
-                                                      child: Text(
-                                                        'What\'s on your mind?',
-                                                        style: TextStyle(
-                                                            fontSize: 17),
-                                                      ),
+                                                                .circular(
+                                                                    10)),
+                                                    child: MaterialButton(
+                                                        onPressed: () {},
+                                                        child: Text(
+                                                          'Create Room',
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .blue,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ))),
+                                                SizedBox(
+                                                  width: 15,
+                                                ),
+                                                Container(
+                                                  height: 80,
+                                                  child: ListView.separated(
+                                                    separatorBuilder:
+                                                        (context, index) =>
+                                                            SizedBox(
+                                                      width: 5,
                                                     ),
+                                                    itemBuilder: (context,
+                                                            index) =>
+                                                        buildRoom(bloc
+                                                            .rooms[index]),
+                                                    physics:
+                                                        NeverScrollableScrollPhysics(),
+                                                    scrollDirection:
+                                                        Axis.horizontal,
+                                                    shrinkWrap: true,
+                                                    itemCount:
+                                                        bloc.rooms.length,
                                                   ),
                                                 )
                                               ],
                                             ),
                                           ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Container(
-                                            height: 1,
-                                            width: double.infinity,
-                                            color: Colors.grey[200],
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Expanded(
-                                                child: Align(
-                                                  alignment:
-                                                      AlignmentDirectional
-                                                          .center,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Icon(
-                                                        Icons.live_tv_sharp,
-                                                        color: Colors.red,
-                                                      ),
-                                                      SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Text('Live')
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                height: 15,
-                                                width: 1,
-                                                color: Colors.grey[300],
-                                              ),
-                                              Expanded(
-                                                child: Align(
-                                                  alignment:
-                                                      AlignmentDirectional
-                                                          .center,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Icon(
-                                                        Icons.photo,
-                                                        color: Colors.green,
-                                                      ),
-                                                      SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Text('Photo')
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                height: 15,
-                                                width: 1,
-                                                color: Colors.grey[300],
-                                              ),
-                                              Expanded(
-                                                child: Align(
-                                                  alignment:
-                                                      AlignmentDirectional
-                                                          .center,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Icon(
-                                                        Icons
-                                                            .video_call_rounded,
-                                                        color: Colors.purple,
-                                                      ),
-                                                      SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Text('Live')
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          )
-                                        ],
+                                        ),
                                       ),
                                     ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Card(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 20.0),
-                                        child: Container(
-                                          height: 60,
-                                          child: SingleChildScrollView(
-                                            scrollDirection: Axis.horizontal,
-                                            physics: BouncingScrollPhysics(),
-                                            child: Padding(
+                                  ),
+                                ),
+                                Conditional.single(
+                                    context: context,
+                                    conditionBuilder: (context) =>
+                                        bloc.posts.length != 0,
+                                    widgetBuilder: (context) =>
+                                        ListView.separated(
+                                            shrinkWrap: true,
+                                            physics:
+                                                NeverScrollableScrollPhysics(),
+                                            itemBuilder: (context,
+                                                    index) =>
+                                                buildPostItem(context,
+                                                    bloc.posts[index]),
+                                            separatorBuilder:
+                                                (context, index) =>
+                                                    SizedBox(
+                                                      height: 0,
+                                                    ),
+                                            itemCount: bloc.posts.length),
+                                    fallbackBuilder: (context) => Shimmer(
+                                        interval: Duration(seconds: 5),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
                                               padding:
-                                                  const EdgeInsets.all(10.0),
+                                                  const EdgeInsets.all(
+                                                      15.0),
                                               child: Row(
                                                 children: [
-                                                  Container(
-                                                      height: 35,
-                                                      decoration: BoxDecoration(
-                                                          color: Colors
-                                                              .lightBlue[50],
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      10)),
-                                                      child: MaterialButton(
-                                                          onPressed: () {},
-                                                          child: Text(
-                                                            'Create Room',
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .blue,
-                                                                fontSize: 16,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
-                                                          ))),
+                                                  CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.grey[300],
+                                                    radius: 22,
+                                                  ),
                                                   SizedBox(
-                                                    width: 5,
+                                                    width: 10,
                                                   ),
                                                   Container(
-                                                    height: 60,
-                                                    child: ListView.separated(
-                                                      separatorBuilder:
-                                                          (context, index) =>
-                                                              SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      itemBuilder: (context,
-                                                              index) =>
-                                                          buildRoom(bloc
-                                                              .rooms[index]),
-                                                      physics:
-                                                          NeverScrollableScrollPhysics(),
-                                                      scrollDirection:
-                                                          Axis.horizontal,
-                                                      shrinkWrap: true,
-                                                      itemCount:
-                                                          bloc.rooms.length,
-                                                    ),
+                                                    width: 120,
+                                                    height: 12,
+                                                    color:
+                                                        Colors.grey[300],
                                                   )
                                                 ],
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Conditional.single(
-                                        context: context,
-                                        conditionBuilder: (context) =>
-                                            bloc.posts.length != 0,
-                                        widgetBuilder: (context) =>
-                                            ListView.separated(
-                                                shrinkWrap: true,
-                                                physics:
-                                                    NeverScrollableScrollPhysics(),
-                                                itemBuilder: (context,
-                                                        index) =>
-                                                    buildPostItem(context,
-                                                        bloc.posts[index]),
-                                                separatorBuilder:
-                                                    (context, index) =>
-                                                        SizedBox(
-                                                          height: 5,
-                                                        ),
-                                                itemCount: bloc.posts.length),
-                                        fallbackBuilder: (context) => Shimmer(
-                                            interval: Duration(seconds: 5),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(
-                                                          15.0),
-                                                  child: Row(
-                                                    children: [
-                                                      CircleAvatar(
-                                                        backgroundColor:
-                                                            Colors.grey[300],
-                                                        radius: 22,
-                                                      ),
-                                                      SizedBox(
-                                                        width: 10,
-                                                      ),
-                                                      Container(
-                                                        width: 120,
-                                                        height: 12,
-                                                        color:
-                                                            Colors.grey[300],
-                                                      )
-                                                    ],
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(
-                                                          10.0),
-                                                  child: Container(
-                                                    width: 250,
-                                                    height: 7,
-                                                    color: Colors.grey[300],
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(
-                                                          10.0),
-                                                  child: Container(
-                                                    width: 200,
-                                                    height: 7,
-                                                    color: Colors.grey[300],
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(
-                                                          10.0),
-                                                  child: Container(
-                                                    width: 250,
-                                                    height: 7,
-                                                    color: Colors.grey[300],
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(
-                                                          10.0),
-                                                  child: Container(
-                                                    width: double.infinity,
-                                                    height: 300,
-                                                    color: Colors.grey[300],
-                                                  ),
-                                                )
-                                              ],
-                                            )))
-                                  ],
-                                ),
-                              ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(
+                                                      10.0),
+                                              child: Container(
+                                                width: 250,
+                                                height: 7,
+                                                color: Colors.grey[300],
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(
+                                                      10.0),
+                                              child: Container(
+                                                width: 200,
+                                                height: 7,
+                                                color: Colors.grey[300],
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(
+                                                      10.0),
+                                              child: Container(
+                                                width: 250,
+                                                height: 7,
+                                                color: Colors.grey[300],
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(
+                                                      10.0),
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: 300,
+                                                color: Colors.grey[300],
+                                              ),
+                                            )
+                                          ],
+                                        )))
+                              ],
                             ),
                           ),
                         ),
 
-                        SizedBox(width: 20,),
+                        Expanded(child: Container()),
                         Container(
                           width: 360,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Expanded(
-                                      child: Text(
-                                    'Contacts',
-                                    style: TextStyle(fontSize: 22,color: Colors.black54),
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                  )),
-                                  Spacer(),
-                                  Icon(
-                                      Icons.video_call_outlined,color: Colors.black54,size: 25),
-                                  SizedBox(width: 10,),
-                                  Icon(Icons.search,color: Colors.black54,size: 25),
-                                  SizedBox(width: 10,),
-                                  Icon(Icons.more_horiz,color: Colors.black54,size: 25,),
-                                  SizedBox(width: 10,),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Expanded(
+                                        child: Text(
+                                      'Contacts',
+                                      style: TextStyle(fontSize: 22,color: Colors.black54),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    )),
+                                    Spacer(),
+                                    Icon(
+                                        Icons.video_call_outlined,color: Colors.black54,size: 25),
+                                    SizedBox(width: 10,),
+                                    Icon(Icons.search,color: Colors.black54,size: 25),
+                                    SizedBox(width: 10,),
+                                    Icon(Icons.more_horiz,color: Colors.black54,size: 25,),
+                                    SizedBox(width: 10,),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
 
-                              Expanded(
-                                child: ListView.separated(
-                                    itemBuilder: (context, index) =>
-                                        buildChatItem(bloc.chats[index]),
-                                    separatorBuilder: (context, index) =>
-                                        SizedBox(
-                                          height: 12,
-                                        ),
-                                    itemCount: bloc.chats.length),
-                              ),
-                              SizedBox(height: 20,),
-                            ],
+                                Expanded(
+                                  child: ListView.separated(
+                                      itemBuilder: (context, index) =>
+                                          buildChatItem(bloc.chats[index]),
+                                      separatorBuilder: (context, index) =>
+                                          SizedBox(
+                                            height: 12,
+                                          ),
+                                      itemCount: bloc.chats.length),
+                                ),
+                                SizedBox(height: 20,),
+                              ],
+                            ),
                           ),
                         ),
                       ],
