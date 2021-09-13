@@ -480,7 +480,7 @@ class FacebookWeb extends StatelessWidget {
                                                       SizedBox(
                                                         width: 5,
                                                       ),
-                                                      Text('Live',style: TextStyle(fontSize: 20,color: Colors.black54),)
+                                                      Text('Live',style: TextStyle(color: Colors.black54),)
                                                     ],
                                                   ),
                                                 ),
@@ -507,7 +507,7 @@ class FacebookWeb extends StatelessWidget {
                                                       SizedBox(
                                                         width: 5,
                                                       ),
-                                                      Text('Photo')
+                                                      Text('Photo',style: TextStyle(color: Colors.black54))
                                                     ],
                                                   ),
                                                 ),
@@ -534,7 +534,7 @@ class FacebookWeb extends StatelessWidget {
                                                       SizedBox(
                                                         width: 5,
                                                       ),
-                                                      Text('Feeling')
+                                                      Text('Feeling',style: TextStyle(color: Colors.black54))
                                                     ],
                                                   ),
                                                 ),
