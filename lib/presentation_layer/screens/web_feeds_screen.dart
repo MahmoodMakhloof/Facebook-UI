@@ -10,6 +10,9 @@ import 'package:flutter_conditional_rendering/conditional.dart';
 import '../../palette.dart';
 
 class FacebookWeb extends StatelessWidget {
+  var centerController = ScrollController();
+  var rightController = ScrollController();
+  var leftController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -244,6 +247,7 @@ class FacebookWeb extends StatelessWidget {
                             flex: 3,
                             child: Container(
                               child: SingleChildScrollView(
+                                controller: leftController,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
@@ -385,6 +389,7 @@ class FacebookWeb extends StatelessWidget {
                           flex: 6,
                           child: Container(
                             child: SingleChildScrollView(
+                              controller: centerController,
                               child: Column(
                                 children: [
                                   Container(
@@ -695,6 +700,7 @@ class FacebookWeb extends StatelessWidget {
                                     ),
                                     Expanded(
                                       child: ListView.separated(
+                                        controller: rightController,
                                           itemBuilder: (context, index) =>
                                               buildChatItem(bloc.chats[index]),
                                           separatorBuilder: (context, index) =>

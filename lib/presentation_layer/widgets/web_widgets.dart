@@ -29,212 +29,208 @@ Widget buildRoom(RoomModel model) => Stack(
       ],
     );
 Widget buildPostItem(context, PostModel model) => Padding(
-      padding: const EdgeInsets.only(
-        right: 25,
-        left: 25,
-        top: 15,
-      ),
-      child: Expanded(
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            color: Colors.white,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+  padding: const EdgeInsets.only(right: 25,
+    left: 25,
+    top: 15,),
+  child: Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(10)),
+      color: Colors.white,
+    ),
+    child: Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 15, top: 5, right: 15),
+            child: Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 15, top: 5, right: 15),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: NetworkImage(model.profileImage),
-                        radius: 22,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            model.name,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w500),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                '${model.time.toString()}h',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w300, fontSize: 11),
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Icon(
-                                Icons.public,
-                                size: 14,
-                                color: Colors.grey,
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      Spacer(),
-                      Icon(
-                        Icons.more_horiz_outlined,
-                        size: 20,
-                        color: Colors.blueGrey,
-                      )
-                    ],
-                  ),
-                ),
-                if (model.text != '')
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        right: 10.0, left: 10, top: 10, bottom: 10),
-                    child: Text(
-                      model.text,
-                      style: TextStyle(
-                        color: Colors.black.withOpacity(0.8),
-                      ),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                // SizedBox(
-                //   height: 10,
-                // ),
-                if (model.images.length != 0)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5, bottom: 10),
-                    child: Image(
-                      image: NetworkImage(model.images[0]),
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                      // height: 700,
-                    ),
-                  ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                          backgroundColor: Colors.red,
-                          radius: 9,
-                          child: Icon(
-                            Icons.favorite,
-                            color: Colors.white,
-                            size: 12,
-                          )),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        model.like.toString(),
-                        style: Theme.of(context).textTheme.caption,
-                      ),
-                      Spacer(),
-                      Text(
-                        '${model.comments.toString()} Comments',
-                        style: Theme.of(context).textTheme.caption,
-                      )
-                    ],
-                  ),
+                CircleAvatar(
+                  backgroundImage: NetworkImage(model.profileImage),
+                  radius: 22,
                 ),
                 SizedBox(
-                  height: 10,
+                  width: 10,
                 ),
-
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: Container(
-                    height: 1,
-                    width: double.infinity,
-                    color: Colors.grey[300],
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      model.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.w500),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          '${model.time.toString()}h',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300, fontSize: 11),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Icon(
+                          Icons.public,
+                          size: 14,
+                          color: Colors.grey,
+                        )
+                      ],
+                    )
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      right: 20, left: 20, top: 15, bottom: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                          child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(
-                            Icons.favorite_border_outlined,
-                            color: Colors.black.withOpacity(0.6),
-                            size: 20,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'Like',
-                              style: TextStyle(
-                                color: Colors.black.withOpacity(0.6),
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          )
-                        ],
-                      )),
-                      Expanded(
-                          child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.mode_comment_outlined,
-                            color: Colors.black.withOpacity(0.6),
-                            size: 20,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text('Comment',
-                                style: TextStyle(
-                                  color: Colors.black.withOpacity(0.6),
-                                ),
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 1),
-                          )
-                        ],
-                      )),
-                      Expanded(
-                          child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Icon(
-                            Icons.share_outlined,
-                            color: Colors.black.withOpacity(0.6),
-                            size: 20,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text('Share',
-                                style: TextStyle(
-                                  color: Colors.black.withOpacity(0.6),
-                                ),
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 1),
-                          )
-                        ],
-                      )),
-                    ],
-                  ),
-                ),
+                Spacer(),
+                Icon(
+                  Icons.more_horiz_outlined,
+                  size: 20,
+                  color: Colors.blueGrey,
+                )
               ],
             ),
           ),
-        ),
+          if (model.text != '')
+            Padding(
+              padding: const EdgeInsets.only(
+                  right: 10.0, left: 10, top: 10, bottom: 10),
+              child: Text(
+                model.text,
+                style: TextStyle(
+                  color: Colors.black.withOpacity(0.8),
+                ),
+                textAlign: TextAlign.start,
+              ),
+            ),
+          // SizedBox(
+          //   height: 10,
+          // ),
+          if (model.images.length != 0)
+            Padding(
+              padding: const EdgeInsets.only(top: 5, bottom: 10),
+              child: Image(
+                image: NetworkImage(model.images[0]),
+                fit: BoxFit.cover,
+                width: double.infinity,
+                // height: 700,
+              ),
+            ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+            child: Row(
+              children: [
+                CircleAvatar(
+                    backgroundColor: Colors.red,
+                    radius: 9,
+                    child: Icon(
+                      Icons.favorite,
+                      color: Colors.white,
+                      size: 12,
+                    )),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  model.like.toString(),
+                  style: Theme.of(context).textTheme.caption,
+                ),
+                Spacer(),
+                Text(
+                  '${model.comments.toString()} Comments',
+                  style: Theme.of(context).textTheme.caption,
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: Container(
+              height: 1,
+              width: double.infinity,
+              color: Colors.grey[300],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+                right: 20, left: 20, top: 15, bottom: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(
+                      Icons.favorite_border_outlined,
+                      color: Colors.black.withOpacity(0.6),
+                      size: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Like',
+                        style: TextStyle(
+                          color: Colors.black.withOpacity(0.6),
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    )
+                  ],
+                )),
+                Expanded(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.mode_comment_outlined,
+                      color: Colors.black.withOpacity(0.6),
+                      size: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('Comment',
+                          style: TextStyle(
+                            color: Colors.black.withOpacity(0.6),
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1),
+                    )
+                  ],
+                )),
+                Expanded(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(
+                      Icons.share_outlined,
+                      color: Colors.black.withOpacity(0.6),
+                      size: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('Share',
+                          style: TextStyle(
+                            color: Colors.black.withOpacity(0.6),
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1),
+                    )
+                  ],
+                )),
+              ],
+            ),
+          ),
+        ],
       ),
-    );
+    ),
+  ),
+);
 
 Widget buildChatItem(ChatModel model) => Row(
       mainAxisAlignment: MainAxisAlignment.start,

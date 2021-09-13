@@ -29,7 +29,7 @@ class Chats {
         image:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwtgJH1LYxi0WQ-JL8GIIt_4UvJDMAUFN44Q&usqp=CAU'),
     ChatModel(
-        name: 'Mahmoud  Taha',
+        name: 'Mahmoud Taha',
         image:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh6oPIzWAVL6bJTbPZ4N2paZ1xpqti-QRj7g&usqp=CAU'),
     ChatModel(
@@ -76,7 +76,7 @@ class Chats {
         image:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwtgJH1LYxi0WQ-JL8GIIt_4UvJDMAUFN44Q&usqp=CAU'),
     ChatModel(
-        name: 'Mahmoud  Taha',
+        name: 'Mahmoud Taha',
         image:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh6oPIzWAVL6bJTbPZ4N2paZ1xpqti-QRj7g&usqp=CAU'),
     ChatModel(
