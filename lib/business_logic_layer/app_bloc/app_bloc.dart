@@ -30,10 +30,9 @@ class AppBloc extends Bloc<AppEvents, AppStates> {
     if (event is GetChatsEvent) {
       yield* getChats();
     }
-    if(event is ChangeTapsIndexEvent)
-      {
-        yield* changeTapsIndex(event.index);
-      }
+    if (event is ChangeTapsIndexEvent) {
+      yield* changeTapsIndex(event.index);
+    }
   }
 
   List<PostModel> posts = [];
@@ -97,6 +96,6 @@ class AppBloc extends Bloc<AppEvents, AppStates> {
   int tapsIndex = 0;
   Stream<AppStates> changeTapsIndex(int index) async* {
     tapsIndex = index;
-      yield ChangeTapsIndexState();
+    yield ChangeTapsIndexState();
   }
 }

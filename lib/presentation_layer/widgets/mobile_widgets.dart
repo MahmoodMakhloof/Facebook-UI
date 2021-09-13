@@ -4,8 +4,8 @@ import 'package:facebook/data_layer/models/roommodel.dart';
 import 'package:facebook/data_layer/models/storymodel.dart';
 import 'package:facebook/palette.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
 
 Widget buildRoom(RoomModel model) => Padding(
       padding: const EdgeInsets.only(left: 5.0, right: 5),
@@ -57,6 +57,7 @@ Widget buildStory(StoryModel model) => Padding(
                   radius: 20,
                   child: CircleAvatar(
                     radius: 17,
+                    foregroundColor: Colors.black12,
                     backgroundImage: NetworkImage('${model.profileImage}'),
                   ),
                 ),
@@ -68,10 +69,10 @@ Widget buildStory(StoryModel model) => Padding(
     );
 
 Widget buildPostItem(context, PostModel model) => Column(
-  crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 15,top: 5,right: 15),
+          padding: const EdgeInsets.only(left: 15, top: 5, right: 15),
           child: Row(
             children: [
               CircleAvatar(
@@ -88,13 +89,14 @@ Widget buildPostItem(context, PostModel model) => Column(
                     model.name,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                   ),
                   Row(
                     children: [
                       Text(
                         '${model.time.toString()}h',
-                        style: TextStyle(fontWeight: FontWeight.w300,fontSize: 11),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w300, fontSize: 11),
                       ),
                       SizedBox(
                         width: 5,
@@ -119,15 +121,22 @@ Widget buildPostItem(context, PostModel model) => Column(
         ),
         if (model.text != '')
           Padding(
-            padding: const EdgeInsets.only(right: 10.0, left: 10,top: 10,bottom: 10),
-            child: Text(model.text,style: TextStyle( color: Colors.black.withOpacity(0.8),),textAlign: TextAlign.start,),
+            padding: const EdgeInsets.only(
+                right: 10.0, left: 10, top: 10, bottom: 10),
+            child: Text(
+              model.text,
+              style: TextStyle(
+                color: Colors.black.withOpacity(0.8),
+              ),
+              textAlign: TextAlign.start,
+            ),
           ),
         // SizedBox(
         //   height: 10,
         // ),
         if (model.images.length != 0)
           Padding(
-            padding: const EdgeInsets.only(top: 5,bottom: 10),
+            padding: const EdgeInsets.only(top: 5, bottom: 10),
             child: CarouselSlider(
               options: CarouselOptions(
                   height: 300,
@@ -179,10 +188,12 @@ Widget buildPostItem(context, PostModel model) => Column(
             ],
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(
+          height: 10,
+        ),
 
         Padding(
-          padding: const EdgeInsets.only(left: 10,right: 10),
+          padding: const EdgeInsets.only(left: 10, right: 10),
           child: Container(
             height: 1,
             width: double.infinity,
@@ -190,7 +201,7 @@ Widget buildPostItem(context, PostModel model) => Column(
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(right: 12,left: 12),
+          padding: const EdgeInsets.only(right: 12, left: 12),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -198,47 +209,57 @@ Widget buildPostItem(context, PostModel model) => Column(
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.favorite_border_outlined,
-                    color: Colors.black.withOpacity(0.6),
-                    size: 20,
-                  )),
-              Text(
-                'Like',style: TextStyle(color: Colors.black.withOpacity(0.6),),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              )
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.favorite_border_outlined,
+                        color: Colors.black.withOpacity(0.6),
+                        size: 20,
+                      )),
+                  Text(
+                    'Like',
+                    style: TextStyle(
+                      color: Colors.black.withOpacity(0.6),
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  )
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.mode_comment_outlined,
-                    color: Colors.black.withOpacity(0.6),
-                    size: 20,
-                  )),
-               Text('Comment', style: TextStyle(color: Colors.black.withOpacity(0.6),),
-                    overflow: TextOverflow.ellipsis, maxLines: 1),
-
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.mode_comment_outlined,
+                        color: Colors.black.withOpacity(0.6),
+                        size: 20,
+                      )),
+                  Text('Comment',
+                      style: TextStyle(
+                        color: Colors.black.withOpacity(0.6),
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.share_outlined,
-                    color: Colors.black.withOpacity(0.6),
-                    size: 20,
-                  )),
-              Text('Share',style: TextStyle(color: Colors.black.withOpacity(0.6),),
-                  overflow: TextOverflow.ellipsis, maxLines: 1)
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.share_outlined,
+                        color: Colors.black.withOpacity(0.6),
+                        size: 20,
+                      )),
+                  Text('Share',
+                      style: TextStyle(
+                        color: Colors.black.withOpacity(0.6),
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1)
                 ],
               ),
             ],
@@ -246,3 +267,62 @@ Widget buildPostItem(context, PostModel model) => Column(
         ),
       ],
     );
+
+Widget shimmerBuilder() => Shimmer(
+    interval: Duration(seconds: 5),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.grey[300],
+                radius: 22,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Container(
+                width: 120,
+                height: 12,
+                color: Colors.grey[300],
+              )
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            width: 250,
+            height: 7,
+            color: Colors.grey[300],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            width: 200,
+            height: 7,
+            color: Colors.grey[300],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            width: 250,
+            height: 7,
+            color: Colors.grey[300],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            width: double.infinity,
+            height: 300,
+            color: Colors.grey[300],
+          ),
+        )
+      ],
+    ));

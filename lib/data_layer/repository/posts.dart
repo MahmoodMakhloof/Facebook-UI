@@ -9,8 +9,7 @@ class Posts {
             'PC programs have evolved significantly over the past 50 years, and they are affected by professional and nonprofit organizations',
         comments: 5,
         like: 50,
-        profileImage:
-            'https://scontent.fcai21-3.fna.fbcdn.net/v/t1.6435-9/223803416_265490708675366_1766659049128476267_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Id1_NhWULQEAX_ZmUX8&_nc_oc=AQkbUYzNzhpRV3f203jaivneTbIBvEcYVufOo9FgVVAlsUElvE-zqYI0iuLsxzOVMVs&_nc_ht=scontent.fcai21-3.fna&oh=f9e9dc9c0b0f896c3515975fda625443&oe=616470EE',
+        profileImage: 'https://scontent.fcai21-3.fna.fbcdn.net/v/t1.6435-9/223803416_265490708675366_1766659049128476267_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Id1_NhWULQEAX_ZmUX8&_nc_oc=AQkbUYzNzhpRV3f203jaivneTbIBvEcYVufOo9FgVVAlsUElvE-zqYI0iuLsxzOVMVs&_nc_ht=scontent.fcai21-3.fna&oh=f9e9dc9c0b0f896c3515975fda625443&oe=616470EE',
         images: [
           'https://i.pinimg.com/564x/ea/ff/f5/eafff5fd05f468af12e8e3a2e84e5e1f.jpg'
         ]),
@@ -21,8 +20,7 @@ class Posts {
             'IPC programs have evolved significantly over the past 50 years, and they are affected by professional and nonprofit organizations; government, regulatory.',
         comments: 25,
         like: 100,
-        profileImage:
-            'https://i.pinimg.com/236x/d1/b0/20/d1b020920db659d93955a0c057a18afe.jpg',
+        profileImage: 'https://i.pinimg.com/236x/d1/b0/20/d1b020920db659d93955a0c057a18afe.jpg',
         images: [
           'https://i.pinimg.com/564x/56/42/a8/5642a85696b4f7caf693a1b99c97bdae.jpg'
         ]),

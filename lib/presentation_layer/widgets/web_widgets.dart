@@ -4,6 +4,7 @@ import 'package:facebook/data_layer/models/postmodel.dart';
 import 'package:facebook/data_layer/models/roommodel.dart';
 import 'package:facebook/data_layer/models/storymodel.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
 
 import '../../palette.dart';
 
@@ -158,7 +159,8 @@ Widget buildPostItem(context, PostModel model) => Padding(
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 20,left: 20,top: 15,bottom: 15),
+                  padding: const EdgeInsets.only(
+                      right: 20, left: 20, top: 15, bottom: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -176,7 +178,7 @@ Widget buildPostItem(context, PostModel model) => Padding(
                             child: Text(
                               'Like',
                               style: TextStyle(
-                            color: Colors.black.withOpacity(0.6),
+                                color: Colors.black.withOpacity(0.6),
                               ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
@@ -186,7 +188,7 @@ Widget buildPostItem(context, PostModel model) => Padding(
                       )),
                       Expanded(
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.mode_comment_outlined,
@@ -206,7 +208,7 @@ Widget buildPostItem(context, PostModel model) => Padding(
                       )),
                       Expanded(
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Icon(
                             Icons.share_outlined,
@@ -311,6 +313,7 @@ Widget buildStory(StoryModel model) => Padding(
                   radius: 20,
                   child: CircleAvatar(
                     radius: 17,
+                    foregroundColor: Colors.black12,
                     backgroundImage: NetworkImage('${model.profileImage}'),
                   ),
                 ),
@@ -320,3 +323,62 @@ Widget buildStory(StoryModel model) => Padding(
         ),
       ),
     );
+
+Widget shimmerBuilder() => Shimmer(
+    interval: Duration(seconds: 5),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.grey[300],
+                radius: 22,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Container(
+                width: 120,
+                height: 12,
+                color: Colors.grey[300],
+              )
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            width: 250,
+            height: 7,
+            color: Colors.grey[300],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            width: 200,
+            height: 7,
+            color: Colors.grey[300],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            width: 250,
+            height: 7,
+            color: Colors.grey[300],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            width: double.infinity,
+            height: 300,
+            color: Colors.grey[300],
+          ),
+        )
+      ],
+    ));

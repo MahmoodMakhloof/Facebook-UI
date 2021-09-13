@@ -1,22 +1,19 @@
 /////////////////////////////////////////////////////////////////////////////
 /* Author      : Mahmoud Makhlouf                                          */
 /* Date        : 10 Sep 2021                                               */
-/* Description : Facebook Ui Feeds Page                                    */
+/* Description : Facebook Ui Feeds Page For Mobile And Web                 */
 /* Version     : V1.0.0                                                    */
 /////////////////////////////////////////////////////////////////////////////
 
-import 'dart:io';
-
-import 'package:desktop_window/desktop_window.dart';
 import 'package:facebook/bloc_observer.dart';
 import 'package:facebook/presentation_layer/screens/web_feeds_screen.dart';
 import 'package:facebook/presentation_layer/screens/mobile_feeds_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
-void main()async {
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = SimpleBlocObserver();
   runApp(MyApp());
@@ -28,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.grey,
+          primarySwatch: Colors.blue,
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.black),
           appBarTheme: AppBarTheme(
@@ -42,20 +39,15 @@ class MyApp extends StatelessWidget {
             elevation: 0.0,
           )),
       home: LayoutBuilder(
-        builder: (context,constrains){
+        builder: (context, constrains) {
           print(constrains.minWidth);
-          if(constrains.minWidth>=602)
-            {
-              return FacebookWeb();
-            }
-          else
-            {
-              return FacebookMobileScreen();
-            }
+          if (constrains.minWidth >= 602) {
+            return FacebookWeb();
+          } else {
+            return FacebookMobileScreen();
+          }
         },
       ),
-
-
     );
   }
 }

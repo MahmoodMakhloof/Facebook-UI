@@ -16,7 +16,8 @@ class FacebookMobileScreen extends StatefulWidget {
   _FacebookMobileScreenState createState() => _FacebookMobileScreenState();
 }
 
-class _FacebookMobileScreenState extends State<FacebookMobileScreen> with TickerProviderStateMixin {
+class _FacebookMobileScreenState extends State<FacebookMobileScreen>
+    with TickerProviderStateMixin {
   late TabController _tabController;
   RefreshController refreshController =
       RefreshController(initialRefresh: false);
@@ -30,8 +31,9 @@ class _FacebookMobileScreenState extends State<FacebookMobileScreen> with Ticker
   @override
   Widget build(BuildContext context) {
     return BlocProvider<AppBloc>(
-      create: (BuildContext context) =>
-          AppBloc()..add(GetStoriesEvent())..add(GetPostsEvent()),
+      create: (BuildContext context) => AppBloc()
+        ..add(GetStoriesEvent())
+        ..add(GetPostsEvent()),
       child: BlocConsumer<AppBloc, AppStates>(
         listener: (context, state) {
           // if (state is! InitialAppState) {
@@ -181,6 +183,7 @@ class _FacebookMobileScreenState extends State<FacebookMobileScreen> with Ticker
                                       backgroundImage: NetworkImage(
                                           'https://scontent.fcai21-3.fna.fbcdn.net/v/t1.6435-9/223803416_265490708675366_1766659049128476267_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Id1_NhWULQEAX8bEVY6&_nc_oc=AQnxRgLV1nt_eHSDxdNxCcIrywXTFdRHHT7U38XgWSJQYvnIciEHdh3Vml8vT_s567c&_nc_ht=scontent.fcai21-3.fna&oh=d3be909533c81d48d6ce03cfd3e01622&oe=61607C6E'),
                                       radius: 22,
+                                      backgroundColor: Colors.black12,
                                     ),
                                     SizedBox(
                                       width: 5,
@@ -335,84 +338,24 @@ class _FacebookMobileScreenState extends State<FacebookMobileScreen> with Ticker
                                 height: 10,
                               ),
                               Conditional.single(
-                                  context: context,
-                                  conditionBuilder: (context) =>
-                                      bloc.posts.length != 0,
-                                  widgetBuilder: (context) =>
-                                      ListView.separated(
-                                          shrinkWrap: true,
-                                          physics:
-                                              NeverScrollableScrollPhysics(),
-                                          itemBuilder: (context, index) =>
-                                              buildPostItem(
-                                                  context, bloc.posts[index]),
-                                          separatorBuilder: (context, index) =>
-                                              Container(
-                                                height: 10,
-                                                width: double.infinity,
-                                                color: Colors.grey[300],
-                                              ),
-                                          itemCount: bloc.posts.length),
-                                  fallbackBuilder: (context) => Shimmer(
-                                      interval: Duration(seconds: 5),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.all(15.0),
-                                            child: Row(
-                                              children: [
-                                                CircleAvatar(
-                                                  backgroundColor:
-                                                      Colors.grey[300],
-                                                  radius: 22,
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Container(
-                                                  width: 120,
-                                                  height: 12,
-                                                  color: Colors.grey[300],
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Container(
-                                              width: 250,
-                                              height: 7,
-                                              color: Colors.grey[300],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Container(
-                                              width: 200,
-                                              height: 7,
-                                              color: Colors.grey[300],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Container(
-                                              width: 250,
-                                              height: 7,
-                                              color: Colors.grey[300],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Container(
-                                              width: double.infinity,
-                                              height: 300,
-                                              color: Colors.grey[300],
-                                            ),
-                                          )
-                                        ],
-                                      ))),
+                                context: context,
+                                conditionBuilder: (context) =>
+                                    bloc.posts.length != 0,
+                                widgetBuilder: (context) => ListView.separated(
+                                    shrinkWrap: true,
+                                    physics: NeverScrollableScrollPhysics(),
+                                    itemBuilder: (context, index) =>
+                                        buildPostItem(
+                                            context, bloc.posts[index]),
+                                    separatorBuilder: (context, index) =>
+                                        Container(
+                                          height: 10,
+                                          width: double.infinity,
+                                          color: Colors.grey[300],
+                                        ),
+                                    itemCount: bloc.posts.length),
+                                fallbackBuilder: (context) => shimmerBuilder(),
+                              )
                             ],
                           ),
                         ),
